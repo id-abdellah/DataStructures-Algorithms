@@ -1,0 +1,17 @@
+{
+  "name": "dsa",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@vitest/ui": "3.2.4",
+    "tsx": "^4.20.3",
+    "vitest": "^3.2.4"
+  }
+}
