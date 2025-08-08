@@ -1,6 +1,5 @@
 
 class PQNode {
-
     constructor(
         public value: string,
         public priority: number
@@ -16,6 +15,10 @@ export class PriorityQueue {
 
     get length() {
         return this.values.length;
+    }
+
+    private checkNodeExists(value: string): number {
+        return this.values.findIndex(node => node.value === value);
     }
 
     private parentIndex(childIndex: number) {
@@ -63,7 +66,27 @@ export class PriorityQueue {
         }
     }
 
+    private bubbleUpFromIndex(index: number) {
+        while (index > 0) {
+            const parentIdx = this.parentIndex(index);
+            if (this.values[parentIdx].priority <= this.values[index].priority) break;
+            this.swap(index, parentIdx);
+            index = parentIdx;
+        }
+    }
+
+
     enqueue(value: PQNode["value"], priority: PQNode["priority"]): this {
+        let index = this.checkNodeExists(value);
+
+        if (index !== -1) {
+            if (priority < this.values[index].priority) {
+                this.values[index].priority = priority;
+                this.bubbleUpFromIndex(index);
+            }
+            return this;
+        }
+
         const newNode = new PQNode(value, priority);
         this.values.push(newNode);
         this.bubbleUp();

@@ -1,4 +1,3 @@
-
 class HashTable {
     private keyMap: [string, any][][]
     constructor(size: number = 53) {
@@ -108,4 +107,4 @@ class HashTable {
     }
 }
 
-const hashTable = new HashTable()
+export { HashTable };
