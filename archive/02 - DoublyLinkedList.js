@@ -6,7 +6,7 @@ class Node {
     }
 }
 
-class DoublyLinkedList {
+class _DoublyLinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
@@ -200,6 +200,3 @@ class DoublyLinkedList {
         return -1
     }
 }
-
-
-const list = new DoublyLinkedList();
