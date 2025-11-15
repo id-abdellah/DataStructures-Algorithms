@@ -9,6 +9,7 @@ class Node {
 }
 
 class BinarySearchTree {
+
     constructor() {
         this.root = null
     }
@@ -222,11 +223,3 @@ class BinarySearchTree {
         return visited;
     }
 }
-
-
-
-const tree = new BinarySearchTree();
-
-tree.insert(10).insert(6).insert(15).insert(3).insert(8).insert(20).insert(12).insert(1).insert(21).insert(18).insert(13).insert(11).insert(9).insert(7).insert(4).insert(0)
-
-tree.print()
